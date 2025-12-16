@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Configuración de tu proyecto Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAzYK2G8yowlacbFnoKC436DfHmssRzxvE",
-  authDomain: "kittycode-91fc2.firebaseapp.com",
-  projectId: "kittycode-91fc2",
-  storageBucket: "kittycode-91fc2.appspot.com",
-  messagingSenderId: "414720487681",
-  appId: "1:414720487681:web:5dfadac553217436eeeb00"
+  apiKey: "AIzaSyDrMgrKVoRrmvao4QSy-3-T896n6VFNNDQ",
+  authDomain: "mi-app-holi.firebaseapp.com",
+  projectId: "mi-app-holi",
+  storageBucket: "mi-app-holi.firebasestorage.app",
+  messagingSenderId: "511502008091",
+  appId: "1:511502008091:web:ee0c10607e5fca952f9dbe"
 };
 
 // Inicializa Firebase
