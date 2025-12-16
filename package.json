@@ -1,15 +1,18 @@
 {
+  
   "name": "kitty-code",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://stevivancomartel-sudo.github.io/Proyecto-Final-U3",
+  "homepage": "https://2ofiaLagos.github.io/KITTYCODE",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+    
+
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",

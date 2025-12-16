@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import bannerImg from "../assets/kitty-banner.png";
 import widgetImg from "../assets/kitylovers.png.jpeg";
 
@@ -33,7 +34,8 @@ const KittyCodeSection = () => {
             className="absolute text-pink-400 opacity-40 pointer-events-none"
             style={{
               fontSize: i % 2 === 0 ? "26px" : "42px",
-              top: `${8 + i * 10}%`,
+              // 🐞 CORRECCIÓN: Uso de template literal (comillas inversas) para inyectar variables JS en CSS
+              top: `${8 + i * 10}%`, 
               left: i % 2 === 0 ? "5%" : "92%",
             }}
           >
@@ -65,11 +67,13 @@ const KittyCodeSection = () => {
           </p>
         </motion.div>
       </div>
+
       {/* 🌸 BANNER */}
       <div
         className="relative min-h-[80vh] flex items-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${bannerImg})`,
+          // 🐞 CORRECCIÓN: Uso de template literal (comillas inversas) para inyectar la URL de la imagen
+          backgroundImage: `url(${bannerImg})`, 
           backgroundSize: "contain",
           backgroundPosition: "right center",
         }}
@@ -121,27 +125,28 @@ const KittyCodeSection = () => {
           </motion.div>
         </div>
       </div>
+
       {/* ✨ Línea brillante */}
       <div className="w-full h-[3px] bg-gradient-to-r from-transparent via-[#ec407a] to-transparent shadow-[0_0_25px_rgba(236,64,122,0.8)]" />
+
       {/* 🌸 ESPACIO EN BLANCO ENTRE BANNER Y PROPUESTA */}
-      <div className="h-16 bg-white"></div>{" "}
-      {/* Ajusta h-16 según el espacio que quieras */}
+      <div className="h-16 bg-white"></div>
+
       {/* 💖 TEXTO PROPUESTA DE VALOR */}
       <div className="relative py-12 px-6 text-center overflow-hidden mt-20">
-        {" "}
-        {/* mt-20: más espacio desde el banner */}
-        {/* 🌸 Fondo difuminado tipo nubecita */}
+        {/* Fondo difuminado tipo nubecita */}
         <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
           <div
             className="
-      w-[85%] max-w-4xl h-full
-      bg-gradient-to-br from-pink-50 via-[#fdecef] to-pink-100
-      rounded-[40px]
-      blur-[1px]
-      shadow-[0_15px_40px_rgba(236,64,122,0.25)]
-    "
+              w-[85%] max-w-4xl h-full
+              bg-gradient-to-br from-pink-50 via-[#fdecef] to-pink-100
+              rounded-[40px]
+              blur-[1px]
+              shadow-[0_15px_40px_rgba(236,64,122,0.25)]
+            "
           />
         </div>
+
         <div className="relative z-10 max-w-3xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -163,22 +168,18 @@ const KittyCodeSection = () => {
           >
             Diseñamos experiencias digitales que conectan emocionalmente 💕,
             reflejan la esencia de tu marca 🐾 y la elevan con creatividad,
-            estrategia e innovación ✨. 
+            estrategia e innovación ✨.
           </motion.p>
         </div>
-        {/* 🌈 Degradado inferior para transición hacia tarjetas */}
+
+        {/* Degradado inferior para transición hacia tarjetas */}
         <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
       </div>
+
       {/* 💎 TARJETAS + WIDGET */}
       <div id="propuesta" className="py-20 bg-white">
-        {" "}
-        {/* reducido de py-28 a py-20 */}
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-8 items-center">
-          {" "}
-          {/* gap reducido de 12 a 8 */}
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {" "}
-            {/* gap reducido de 8 a 6 */}
             {[
               {
                 title: "¿Quiénes somos?",
@@ -195,7 +196,7 @@ const KittyCodeSection = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -8, scale: 1.04 }} // efecto hover un poco más suave
+                whileHover={{ y: -8, scale: 1.04 }}
                 className="bg-gradient-to-br from-pink-50 to-pink-100 p-8 rounded-2xl shadow-md hover:shadow-pink-300/50"
               >
                 <h3
@@ -204,12 +205,11 @@ const KittyCodeSection = () => {
                 >
                   {item.title}
                 </h3>
-                <p className="text-pink-700 text-sm md:text-base">
-                  {item.text}
-                </p>
+                <p className="text-pink-700 text-sm md:text-base">{item.text}</p>
               </motion.div>
             ))}
           </div>
+
           <motion.img
             src={widgetImg}
             alt="KittyCode Team"
@@ -219,11 +219,10 @@ const KittyCodeSection = () => {
           />
         </div>
       </div>
-      {/* 💗 SERVICIOS */}{" "}
+
+      {/* 💗 SERVICIOS */}
       <div id="servicios" className="py-28 bg-[#fdecef]">
-        {" "}
         <div className="max-w-6xl mx-auto px-6">
-          {" "}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -231,20 +230,16 @@ const KittyCodeSection = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            {" "}
             <h2 className="text-3xl lg:text-4xl font-bold text-[#d81b60] mb-6">
-              {" "}
-              ¿Qué hacemos?{" "}
-            </h2>{" "}
+              ¿Qué hacemos?
+            </h2>
             <p className="text-lg lg:text-xl text-pink-700 max-w-3xl mx-auto">
-              {" "}
               Nos adaptamos a tus ideas, transformamos conceptos en realidades
-              digitales y damos identidad a cada marca con creatividad e
-              innovación.{" "}
-            </p>{" "}
-          </motion.div>{" "}
+              digitales y damos identidad a cada marca con creatividad e innovación.
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {" "}
             {[
               {
                 icon: "😺",
@@ -268,35 +263,86 @@ const KittyCodeSection = () => {
                 transition={{ type: "spring", stiffness: 180 }}
                 className="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl"
               >
-                {" "}
-                <div className="text-4xl mb-4">{item.icon}</div>{" "}
+                <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-[#d81b60] mb-3">
-                  {" "}
-                  {item.title}{" "}
-                </h3>{" "}
-                <p className="text-pink-700">{item.text}</p>{" "}
+                  {item.title}
+                </h3>
+                <p className="text-pink-700">{item.text}</p>
               </motion.div>
-            ))}{" "}
+            ))}
           </div>
-          {/* 🌟 CTA BRILLANTE */}
-          <div className="text-center mt-28">
-            <motion.a
-              href="/contacto"
+          {/* 🌟 BOTÓN CON LLUVIA DE BRILLOS Y HUELLITAS */}
+          <div className="relative flex justify-center mt-28">
+            {/* Huellitas flotantes a los lados */}
+            {[...Array(6)].map((_, i) => (
+              <motion.span
+                key={i}
+                animate={{ y: [0, -15, 0], opacity: [0.3, 0.8, 0.3] }}
+                transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute text-pink-400 pointer-events-none"
+                style={{
+                  fontSize: "28px",
+                  // 🐞 CORRECCIÓN: Uso de template literal
+                  top: `${10 + i * 3}px`, 
+                  left: i % 2 === 0 ? "-40px" : "calc(100% + 10px)",
+                }}
+              >
+                🐾
+              </motion.span>
+            ))}
+
+            {/* Lluvia de brillos */}
+            {[...Array(15)].map((_, i) => (
+              <motion.span
+                key={i}
+                animate={{ y: [0, -20, 0], x: [0, Math.random() * 30 - 15, 0], opacity: [0, 1, 0] }}
+                transition={{
+                  duration: 2 + Math.random() * 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: Math.random() * 2,
+                }}
+                className="absolute text-yellow-300 pointer-events-none"
+                style={{
+                  // 🐞 CORRECCIÓN: Uso de template literal
+                  fontSize: `${Math.random() * 8 + 8}px`, 
+                  top: `${Math.random() * 60}%`,
+                  left: `${Math.random() * 100}%`,
+                }}
+              >
+                ✨
+              </motion.span>
+            ))}
+
+            {/* Botón con resplandor */}
+            <motion.div
+              initial={{ scale: 1 }}
               whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: [
-                  "0 0 25px #ec407a",
-                  "0 0 45px #f48fb1",
-                  "0 0 25px #ec407a",
-                ],
-              }}
-              transition={{ repeat: Infinity, duration: 2.5 }}
-              className="inline-block bg-[#ec407a] text-white
-              px-14 py-6 rounded-full text-xl font-semibold"
+              className="relative inline-block"
             >
-              ✨ Hagamos realidad tu idea ✨
-            </motion.a>
+              {/* Aura brillante animada */}
+              <motion.div
+                animate={{
+                  boxShadow: [
+                    "0 0 15px rgba(236,64,122,0.5)",
+                    "0 0 35px rgba(244,143,177,0.7)",
+                    "0 0 15px rgba(236,64,122,0.5)",
+                  ],
+                }}
+                transition={{ repeat: Infinity, duration: 2.5 }}
+                className="absolute inset-0 rounded-full"
+              />
+
+              {/* Botón principal */}
+              <Link
+                to="/contacto"
+                className="relative inline-block bg-gradient-to-r from-pink-400 to-rose-400 text-white
+                px-14 py-6 rounded-full text-xl font-semibold
+                hover:from-rose-500 hover:to-pink-500 hover:scale-110 transition-all z-10"
+              >
+                ✨ Hagamos realidad tu idea ✨
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>
